@@ -31,3 +31,19 @@
 ## Fluidité de l'UI avec `UseTransition`
 - **Concept (react > 18):** Permet de marquer certaines mises à jour d'état comme "non urgentes" (transitions). On garde l'interface reactive (comme un champ de texte) meme si un rendu lourd se prépare en arrière plan
 - **Intérêt de l'utilisation :** Le but principal est d'améliorer considérablement l'expérience utilisateur (UX) en évitant les blocages ou les saccades ( les fameux "freezes"). au lieu de paralyser l'écran pendant le calcul d'un filtre complexe ou le rendu d'une énorme liste, l'utilisateur peut continuer à interagir de manière fluide (par exemple, continuer à taper au clavier). l'état `isPending` fourni par le hook est également parfait pour afficher un petit indicateur de chargement, montrant que l'application travaille en tâche de fond
+
+## Gestion des formulaires avec `Formik` et `Yup`
+- **Le problème :** génrer les formulaires natifs en React demande beaucoup de code (gestion de chaque champ, des erreurs, de la soumission).
+- **La solution Formik :** Gère l'état du formulaire, les évènements de changement et la soumission de manière déclarative.
+- **La solution Yup :**Bibliothèque de validation de schéma
+
+### Installation
+- **Formik :** `npm install formik --save`
+- **Yup :** `npm install yup --save`
+
+## Gestion d'état Global avec Zustand
+- **Concept :** Zustand est une bibliotheque de gestion d'etat (state management). Elle permet de créer un store accessible partout dans l'application sans utiliser de `context provider`
+- **Interet de l'utilisation de Zustand :**
+    1. **Zero boilerplate :** Contrairement à Redux, il n'ya a pas besoin d'Actions, de Reducers ou de Types complexes.
+    2. **Performances :** Les composants ne se re-rendent qui si la partie prcise de l'etat qu'ils utilisent change (sélecteurs).
+    3. **Simplicité :** C'est une simple fonction `create` qui renvoie un Hook
